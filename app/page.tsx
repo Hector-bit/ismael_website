@@ -1134,7 +1134,7 @@ export default function SMAutoDetailingPage() {
             {/* Form */}
             <form
               name="contact form"
-              netlify
+              data-netlify="true"
               style={{
                 background: "#F5F0E8",
                 border: "3px solid #F5C518",
