@@ -1132,7 +1132,9 @@ export default function SMAutoDetailingPage() {
             </div>
 
             {/* Form */}
-            <div
+            <form
+              name="contact form"
+              netlify
               style={{
                 background: "#F5F0E8",
                 border: "3px solid #F5C518",
@@ -1240,7 +1242,7 @@ export default function SMAutoDetailingPage() {
               >
                 SEND REQUEST
               </button>
-            </div>
+            </form>
           </div>
         </section>
 
