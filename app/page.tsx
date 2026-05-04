@@ -13,23 +13,22 @@ interface PricingTier {
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const exteriorTiers: PricingTier[] = [
+  // {
+  //   name: "Basic Wash",
+  //   price: "$49",
+  //   tag: "EXTERIOR",
+  //   features: [
+  //     "Hand wash & rinse",
+  //     "Wheel & tire clean",
+  //     "Window exterior clean",
+  //     "Door jamb wipe-down",
+  //     "Air dry & hand towel finish",
+  //   ],
+  // },
   {
-    name: "Basic Wash",
-    price: "$49",
+    name: "Full Exterior Detail",
+    price: "$250",
     tag: "EXTERIOR",
-    features: [
-      "Hand wash & rinse",
-      "Wheel & tire clean",
-      "Window exterior clean",
-      "Door jamb wipe-down",
-      "Air dry & hand towel finish",
-    ],
-  },
-  {
-    name: "Full Detail",
-    price: "$129",
-    tag: "EXTERIOR",
-    highlight: true,
     features: [
       "Everything in Basic Wash",
       "Clay bar decontamination",
@@ -39,25 +38,25 @@ const exteriorTiers: PricingTier[] = [
       "Chrome & glass polish",
     ],
   },
-  {
-    name: "Show Shine",
-    price: "$249",
-    tag: "EXTERIOR",
-    features: [
-      "Everything in Full Detail",
-      "Two-stage paint correction",
-      "Ceramic sealant coating",
-      "Headlight restoration",
-      "Engine bay clean",
-      "Iron & tar decontamination",
-    ],
-  },
+  // {
+  //   name: "Show Shine",
+  //   price: "$249",
+  //   tag: "EXTERIOR",
+  //   features: [
+  //     "Everything in Full Detail",
+  //     "Two-stage paint correction",
+  //     "Ceramic sealant coating",
+  //     "Headlight restoration",
+  //     "Engine bay clean",
+  //     "Iron & tar decontamination",
+  //   ],
+  // },
 ];
 
 const interiorTiers: PricingTier[] = [
   {
     name: "Fresh Interior",
-    price: "$79",
+    price: "$200",
     tag: "INTERIOR",
     features: [
       "Full vacuum (seats, floor, trunk)",
@@ -68,10 +67,9 @@ const interiorTiers: PricingTier[] = [
     ],
   },
   {
-    name: "Deep Clean",
-    price: "$159",
-    tag: "INTERIOR",
-    highlight: true,
+    name: "Complete Deep Clean",
+    price: "$450",
+    tag: "INTERIOR + EXTERIOR",
     features: [
       "Everything in Fresh Interior",
       "Shampoo carpets & floor mats",
@@ -82,9 +80,9 @@ const interiorTiers: PricingTier[] = [
     ],
   },
   {
-    name: "Showroom Ready",
-    price: "$299",
-    tag: "INTERIOR",
+    name: "Ceramic wrap",
+    price: "$800-1200",
+    tag: "COATING",
     features: [
       "Everything in Deep Clean",
       "Steam sanitize entire cabin",
@@ -304,16 +302,11 @@ function PricingCard({ tier }: { tier: PricingTier }) {
 
 // ─── MAIN PAGE ─────────────────────────────────────────────────────────────────
 export default function SMAutoDetailingPage() {
-  const [activeTab, setActiveTab] = useState<"exterior" | "interior" | "both">(
-    "exterior"
-  );
+  // const [activeTab, setActiveTab] = useState<"exterior" | "interior" | "both">(
+  //   "exterior"
+  // );
 
-  const shownTiers =
-    activeTab === "exterior"
-      ? exteriorTiers
-      : activeTab === "interior"
-      ? interiorTiers
-      : [...exteriorTiers, ...interiorTiers];
+  const shownTiers = [...exteriorTiers, ...interiorTiers];
 
   return (
     <>
@@ -969,7 +962,7 @@ export default function SMAutoDetailingPage() {
                 flexWrap: "wrap",
               }}
             >
-              {(
+              {/* {(
                 [
                   ["exterior", "Exterior"],
                   ["interior", "Interior"],
@@ -997,7 +990,7 @@ export default function SMAutoDetailingPage() {
                 >
                   {label}
                 </button>
-              ))}
+              ))} */}
             </div>
 
             <div
@@ -1026,7 +1019,7 @@ export default function SMAutoDetailingPage() {
               }}
             >
               ◆ All prices are starting rates and may vary by vehicle size,
-              condition, and add-ons. Contact us for a custom quote.
+              condition, and add-ons. Contact us for a custom quote. (360) 821-4336
             </div>
           </div>
         </section>
@@ -1084,8 +1077,8 @@ export default function SMAutoDetailingPage() {
               />
 
               {[
-                { icon: "📍", label: "Location", value: "Lafayette, Louisiana" },
-                { icon: "📞", label: "Phone", value: "(337) 555-0199" },
+                { icon: "📍", label: "Location", value: "120 W Smith Rd building A, Bellingham, WA 98226" },
+                { icon: "📞", label: "Phone", value: "(360) 821-4336" },
                 { icon: "✉️", label: "Email", value: "info@smautodtl.com" },
                 { icon: "🕐", label: "Hours", value: "Mon–Sat: 8am – 6pm" },
               ].map((c) => (
